@@ -68,5 +68,12 @@ namespace SolidExercices.Tests
             var result = calculator.Calculate("1000/10/10");
             Check.That(result).IsEqualTo(10m);
         }
+
+        [Test]
+        public void CalculatorTrainer()
+        {
+            var calcTrainer = new CalculatorTrainer();
+            calcTrainer.Run();
+        }
     }
 }

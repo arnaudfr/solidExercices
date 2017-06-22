@@ -14,6 +14,7 @@ namespace SolidExercices
                 {'+', new OperationSum()},
                 {'-', new OperationSub()},
                 {'*', new OperationProd()},
+                {'x', new OperationProd()},
                 {'/', new OperationDiv()}
             };
             var opType = new OperationTypes(dico);
@@ -24,12 +25,15 @@ namespace SolidExercices
             //if (CheckValue(operation))
             //{
             var type = opType.Detect(operation);
-            var numbers = Cut(operation, type.Value.Key);
-            op = type.Value.Value;
-            var result = op.Calculate(numbers);
-            return result;
+            if (type != null)
+            {
+                var numbers = Cut(operation, type.Value.Key);
+                op = type.Value.Value;
+                var result = op.Calculate(numbers);
+                return result;
+            }
             //}
-            //return 0;
+            return 0;
         }
 
         //public bool CheckValue(string insertedValue)
