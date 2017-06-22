@@ -8,29 +8,29 @@ namespace SolidExercices
 {
     class OperationTypes
     {
-        private readonly char[] _types;
+        readonly Dictionary<char, object> _types;
+        
 
-        public OperationTypes(char[] types)
+        public OperationTypes(Dictionary<char, object> types)
         {
             _types = types;
         }
 
-        public char Detect(string insertedValue)
+        public object Detect(string insertedValue)
         {
             var firstChar = insertedValue[0];
-            var detected = '';
 
             // Isoler un signe négatif en début de chaîne
             var unsignedString = firstChar == '-' ? insertedValue.Substring(1, insertedValue.Length - 1) : insertedValue;
 
             foreach (var type in _types)
             {
-                if (!unsignedString.Contains(type)) continue;
-                detected = type;
+                if (!unsignedString.Contains(type.Key)) continue;
+                var detected = type.Value;
                 return detected;
             }
 
-            return detected;
+            return null;
         }
     }
 }

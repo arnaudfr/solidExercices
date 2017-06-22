@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolidExercices
 {
-    interface IOperation
+    internal interface IOperation
     {
         decimal Calculate(List<decimal> numbers);
     }
