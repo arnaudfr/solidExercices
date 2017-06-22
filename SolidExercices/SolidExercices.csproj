@@ -44,6 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="IOperation.cs" />
+    <Compile Include="Operation.cs" />
+    <Compile Include="OperationDiv.cs" />
+    <Compile Include="OperationProd.cs" />
+    <Compile Include="OperationSub.cs" />
+    <Compile Include="OperationSum.cs" />
+    <Compile Include="OperationTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

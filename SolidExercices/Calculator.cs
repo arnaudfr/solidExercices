@@ -11,10 +11,10 @@ namespace SolidExercices
         {
             var dico = new Dictionary<char, IOperation>
             {
-                {'+', new OperationSum},
-                {'-', new OperationSub},
-                {'*', typeof(OperationProd)},
-                {'/', typeof(OperationDiv)}
+                {'+', new OperationSum()},
+                {'-', new OperationSub()},
+                {'*', new OperationProd()},
+                {'/', new OperationDiv()}
             };
             var opType = new OperationTypes(dico);
             
@@ -27,8 +27,11 @@ namespace SolidExercices
                 if (type != null)
                 {
                     var numbers = Cut(operation, type.Value.Key);
+                    op = type.Value.Value;
+                    var result = op.Calculate(numbers);
+                    return result;
                 }
-                op.Calculate();
+                return 0;
             }
             else
             {
