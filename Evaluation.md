@@ -17,13 +17,13 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1)
+Q1) Pour éviter les répétiton de 'if' ou les switch on peut factoriser les test en séparant une classe et en exploitant les listes ou tableaux pour effectuer des boucles de tests.
 
-Q2)
+Q2) Principe d'ouverture/fermeture de code. Le code doit être ouvert à l'extension (ajout d'une nouvelle opération) et fermé à la modification.
 
-Q3)
+Q3) Principe de substitution de Liskov, le calculateur doit pouvoir instancier des opérations différentes.
 
-Q4)
+Q4) 
 
 Q5)
 
