@@ -21,34 +21,27 @@ namespace SolidExercices
             IOperation op;
 
             // Vérification de la valeur insérée
-            if (CheckValue(operation))
-            {
-                var type = opType.Detect(operation);
-                if (type != null)
-                {
-                    var numbers = Cut(operation, type.Value.Key);
-                    op = type.Value.Value;
-                    var result = op.Calculate(numbers);
-                    return result;
-                }
-                return 0;
-            }
-            else
-            {
-                return 0;
-            }
+            //if (CheckValue(operation))
+            //{
+            var type = opType.Detect(operation);
+            var numbers = Cut(operation, type.Value.Key);
+            op = type.Value.Value;
+            var result = op.Calculate(numbers);
+            return result;
+            //}
+            //return 0;
         }
 
-        public bool CheckValue(string insertedValue)
-        {
-            var rgx = new Regex(@"^[-+]?[0-9]+([-+*/]+[-+]?[0-9]+)*$");
-            var isValid = rgx.IsMatch(insertedValue);
-            return isValid;
-        }
+        //public bool CheckValue(string insertedValue)
+        //{
+        //    var rgx = new Regex(@"^[-+]?[0-9]+([-+*/]+[-+]?[0-9]+)*$");
+        //    var isValid = rgx.IsMatch(insertedValue);
+        //    return isValid;
+        //}
 
         public List<decimal> Cut(string insertedValue, char splitChar)
         {
-            List<decimal> numbers = null;
+            List<decimal> numbers = new List<decimal>();
 
             var numbersStr = insertedValue.Split(splitChar);
             foreach (string num in numbersStr)
