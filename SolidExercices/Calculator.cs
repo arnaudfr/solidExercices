@@ -9,21 +9,30 @@ namespace SolidExercices
     {
         public decimal Calculate(string operation)
         {
-            var dico = new Dictionary<char, object>
+            var dico = new Dictionary<char, IOperation>
             {
-                {'+', typeof(OperationSum)},
-                {'-', typeof(OperationSub)},
+                {'+', new OperationSum},
+                {'-', new OperationSub},
                 {'*', typeof(OperationProd)},
                 {'/', typeof(OperationDiv)}
             };
-
             var opType = new OperationTypes(dico);
+            
+            IOperation op;
 
             // Vérification de la valeur insérée
             if (CheckValue(operation))
             {
                 var type = opType.Detect(operation);
-                
+                if (type != null)
+                {
+                    var numbers = Cut(operation, type.Value.Key);
+                }
+                op.Calculate();
+            }
+            else
+            {
+                return 0;
             }
         }
 
@@ -34,10 +43,17 @@ namespace SolidExercices
             return isValid;
         }
 
-        public string[] Cut(string insertedValue, char splitChar)
+        public List<decimal> Cut(string insertedValue, char splitChar)
         {
-            var op = insertedValue.Split(splitChar);
-            return op;
+            List<decimal> numbers = null;
+
+            var numbersStr = insertedValue.Split(splitChar);
+            foreach (string num in numbersStr)
+            {
+                var number = Convert.ToDecimal(num);
+                numbers.Add(number);
+            }
+            return numbers;
         }
 
     }

@@ -8,15 +8,15 @@ namespace SolidExercices
 {
     class OperationTypes
     {
-        readonly Dictionary<char, object> _types;
+        readonly Dictionary<char, IOperation> _types;
         
 
-        public OperationTypes(Dictionary<char, object> types)
+        public OperationTypes(Dictionary<char, IOperation> types)
         {
             _types = types;
         }
 
-        public object Detect(string insertedValue)
+        public KeyValuePair<char, IOperation>? Detect(string insertedValue)
         {
             var firstChar = insertedValue[0];
 
@@ -26,7 +26,7 @@ namespace SolidExercices
             foreach (var type in _types)
             {
                 if (!unsignedString.Contains(type.Key)) continue;
-                var detected = type.Value;
+                var detected = type;
                 return detected;
             }
 
