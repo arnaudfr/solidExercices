@@ -8,7 +8,7 @@ namespace SolidExercices
 {
     class OperationProd : IOperation
     {
-        public decimal Calculate(decimal[] numbers)
+        public decimal Calculate(List<decimal> numbers)
         {
             throw new NotImplementedException();
         }

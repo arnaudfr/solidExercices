@@ -8,6 +8,6 @@ namespace SolidExercices
 {
     interface IOperation
     {
-        decimal Calculate(decimal[] numbers);
+        decimal Calculate(List<decimal> numbers);
     }
 }

@@ -8,9 +8,17 @@ namespace SolidExercices
 {
     class OperationDiv : IOperation
     {
-        public decimal Calculate(decimal[] numbers)
+        public decimal Calculate(List<decimal> numbers)
         {
-            throw new NotImplementedException();
+            var result = numbers.First();
+            numbers.Remove(result);
+
+            foreach (var number in numbers)
+            {
+                result = result / number;
+            }
+
+            return result;
         }
     }
 }
