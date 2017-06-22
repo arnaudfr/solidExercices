@@ -19,8 +19,6 @@ namespace SolidExercices
             return isValid;
         }
 
-
-
         public string[] Cut(string insertedValue, char splitChar)
         {
             var op = insertedValue.Split(splitChar);
