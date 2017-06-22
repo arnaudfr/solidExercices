@@ -6,10 +6,18 @@ namespace SolidExercices
 {
     public class Calculator
     {
-        public double Calculate(string operation)
+        public decimal Calculate(string operation)
         {
+            var types = new[] {'+', '-', '*', '/'};
+            var opType = new OperationTypes(types);
 
-            throw new NotImplementedException();
+            // Vérification de la valeur insérée
+            if (CheckValue(operation))
+            {
+                var type = opType.Detect(operation);
+
+
+            }
         }
 
         public bool CheckValue(string insertedValue)

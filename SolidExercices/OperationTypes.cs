@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace SolidExercices
 {
-    class OperationType
+    class OperationTypes
     {
-        private readonly string[] _types;
+        private readonly char[] _types;
 
-        public OperationType(string[] types)
+        public OperationTypes(char[] types)
         {
             _types = types;
         }
 
-        public string Detect(string insertedValue)
+        public char Detect(string insertedValue)
         {
             var firstChar = insertedValue[0];
-            string detected = "";
+            var detected = '';
 
             // Isoler un signe négatif en début de chaîne
             var unsignedString = firstChar == '-' ? insertedValue.Substring(1, insertedValue.Length - 1) : insertedValue;
