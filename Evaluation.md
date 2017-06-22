@@ -23,7 +23,7 @@ Q2) Principe d'ouverture/fermeture de code. Le code doit être ouvert à l'extensi
 
 Q3) Principe de substitution de Liskov, le calculateur doit pouvoir instancier des opérations différentes.
 
-Q4) 
+Q4) La classe ne permet que d'utiliser des valeurs en dures dans le code, elle devrait prendre une interface d'accès au données quui pourra alors avoir différentes implémentations correspondant à plusieurs sources de données (design pattern Repository)
 
 Q5)
 
